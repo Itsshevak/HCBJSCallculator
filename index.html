@@ -62,8 +62,8 @@
         // adding click event for numbers
         for (var i = 0; i < number.length; i++) {
           number[i].addEventListener("click", function (e) {
-            var currentString = input.innerHTML;
-            var lastChar = currentString[currentString.length - 1];
+            var cstring = input.innerHTML;
+            var lastChar = cstring[cstring.length - 1];
 
             // if result is not displayed , keep adding
             if (resultDisplayed === false) {
@@ -88,16 +88,16 @@
         var operator = document.querySelectorAll('.operators');
         for (var i = 0; i < operator.length; i++) {
           operator[i].addEventListener("click", function (e) {
-            var currentString = input.innerHTML;
-            var lastChar = currentString[currentString.length - 1];
+            var cstring = input.innerHTML;
+            var lastChar = cstring[cstring.length - 1];
 
             // the last character is a operator this will replace the curently click the operator
             if (lastChar === "+" || lastChar === "-" || lastChar === "×" || lastChar === "÷") {
-              var newString = currentString.substring(0, currentString.length - 1) + e.target.innerHTML;
-              input.innerHTML = newString;
+              var nstring = cstring.substring(0, cstring.length - 1) + e.target.innerHTML;
+              input.innerHTML = nstring;
             }
             // check the first value is operator din't display nothig
-            else if (currentString.length == 0) {
+            else if (cstring.length == 0) {
               console.log(" ");
             }
             // else add the operator
@@ -115,15 +115,15 @@
 
 
           // sselect the input value (10-20+3*4/2)
-          var inputString = input.innerHTML;
+          var istring = input.innerHTML;
 
           // input value is seperated by array numbers ["10","20","3","4","2"]
-          var numbers = inputString.split(/\+|\-|\×|\÷/g);
+          var numbers = istring.split(/\+|\-|\×|\÷/g);
 
           // input value is seperated by array operators ["-","+","*","/"]
-          var operators = inputString.replace(/[0-9]|\./g, "").split("");
+          var operators = istring.replace(/[0-9]|\./g, "").split("");
 
-          console.log(inputString);
+          console.log(istring);
           console.log(operators);
           console.log(numbers);
           console.log("___________________________________");
@@ -182,8 +182,8 @@
         // delete the value by one by one 
         var del = document.getElementById('del');
         del.addEventListener("click", function () {
-          var currentString = input.innerHTML;
-          input.innerHTML = currentString.slice(0, -1);
+          var cstring = input.innerHTML;
+          input.innerHTML = cstring.slice(0, -1);
         });
 
 
